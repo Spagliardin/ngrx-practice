@@ -1,0 +1,19 @@
+<li [class.completed]="todo.completed"
+    [class.editing]="edited">
+    <div class="view">
+      <input class="toggle"
+             type="checkbox"
+             [formControl]="chkCompleted"
+             >
+      <label (dblclick)="editing()" > {{ todo.text }} </label>
+      <button class="destroy"
+              (click)="deletedTodo()">
+      </button>
+    </div>
+    <input class="edit"
+           type="text"
+           [formControl]="txtInput"
+           (blur)="finishEdit()"
+           #inputFisic
+           >
+  </li>
